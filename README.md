@@ -17,6 +17,8 @@ From the core, you get:
 Align to a reference using blasr on HPC
 ====
 
+(__Note:__ this is how we did things for Rogers _et al._)
+
 Assumes that data are in the folder from which this script is submitted.  And, file-extra.tar.gz has been uncompressed, and the output is in a folder called extra.
 
 
