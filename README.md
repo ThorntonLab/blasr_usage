@@ -26,7 +26,7 @@ qsub blasrit.sh -q bio,pub64 `pwd` reference
 ```
 
 ```{sh}
-#!sh
+#!/bin/bash
 
 #$ -pe openmp 16-64
 
