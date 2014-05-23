@@ -24,7 +24,7 @@ Assumes that data are in the folder from which this script is submitted.  And, f
 #!/bin/bash
 
 #$ -pe openmp 16-64
-
+#$ -R y
 module load krthornt/blasr/blasr
 module load samtools
 
