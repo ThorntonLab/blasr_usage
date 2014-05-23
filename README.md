@@ -19,11 +19,6 @@ Align to a reference using blasr on HPC
 
 Assumes that data are in the folder from which this script is submitted.  And, file-extra.tar.gz has been uncompressed, and the output is in a folder called extra.
 
-Usage:
-
-```
-qsub blasrit.sh -q bio,pub64 `pwd` reference
-```
 
 ```{sh}
 #!/bin/bash
@@ -47,4 +42,16 @@ done
 
 samtools merge $sample.bam $BFILES
 samtools depth $sample.bam | gzip > $sample.depth.gz
+```
+
+Usage:
+
+```
+qsub blasrit.sh -q bio,pub64 `pwd` reference
+```
+
+For example, to align Emerson lab Dteis data agains the Dyak reference used in [Rogers _et al._](http://mbe.oxfordjournals.org/content/early/2014/04/25/molbev.msu124.abstract):
+
+```
+qsub blasrit.sh -q bio,pub64 `pwd` /home/kevin/references/dyak/dyak-all-chromosome-r1.3-newnames.fasta
 ```
