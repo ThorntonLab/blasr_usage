@@ -63,17 +63,19 @@ Crude results for first run on Dteiss data
 
 Running the following R script:
 
-
-```r
+```{r eval=FALSE,include=TRUE}
 library(plyr)
 
-x = read.table("extra/PACbio_Dtei.depth.gz", colClasses = rep("integer", 3))
+x=read.table("extra/PACbio_Dtei.depth.gz",colClasses=rep("integer",3))
 
-names(x) <- c("chrom", "pos", "coverage")
-ccdata = ddply(x, c("chrom"), summarise, m = mean(coverage), md = median(coverage), 
-    low = min(coverage), hi = max(coverage))
+names(x) <-c("chrom","pos","coverage")
+ccdata = ddply(x,c("chrom"),summarise,
+    m=mean(coverage),
+    md=median(coverage),
+    low=min(coverage),
+    hi=max(coverage)
+    )
 ```
-
 
 Gave the following output for the major chroms
 ```
